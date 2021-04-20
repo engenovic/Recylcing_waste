@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aysha's Restaurant | About Us</title>
+	<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		body {
+			padding: 25px;
+			background-color: white;
+			color: black;
+			font-size: 25px;
+		}
+		
+		.dark-mode {
+			background-color: black;
+			color: white;
+		}
+		#toggle {
+  border-radius: 25px;
+  background: #DE7230;
+  padding: 20px;
+  width: 200px;
+	height: 50px;
+	color: white;
+}
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #DE7230;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #DE7230;
+  text-decoration: underline;
+}
+		</style>
+		<script>
+			// Retrieve data
+			var ck= "Welcome Back, " + localStorage.getItem("name");
+			document.getElementById('ck').innerHTML = ck;
+			</script>
+</head>
+<body>
+
+
+	<header>
+		<div class="">
+			
+			<ul class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="contact-us.html">Contact</a></li>
+				<li>About us</li>
+			</ul>
+		</div>
+	</header>
+
+
+
+	<section class="">
+
+		<div class="container">
+			
+			<script>
+			function Toggle() {
+				 var element = document.body;
+				 element.classList.toggle("dark-mode");
+			}
+			</script>
+		 </div>
+	</section>
+	<div class="container" id="ck">
+		<div class="top-left">{<script>document.getElementById('ck').innerHTML = ck;</script></div>
+	</div>
+	<section class="section">
+		
+		<div class="container">
+			<div class="ays_row">
+				<div class="w_50">
+					<div class="ays_content">
+						<p>Hello there, my name is Aysha I run this restaurant. In our restaurant we serve a variety of dishes for you to choose from, all so that you can find your favorite dish. 
+							We serve a colorful salad buffet with fresh ingredients to complement your meal. Welcome to experience our amazing services!</p>
+						
+						<button id="toggle" class="button" onclick="Toggle()">Toggle dark mode</button>
+					</div>
+				</div>
+				<div class="w_50">
+					<div class="image">
+						<img src="images/aysha2.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+   
+	<footer>
+		<div class="container">
+			<p>Copyright &copy; 2020. All Rights Reserved.</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

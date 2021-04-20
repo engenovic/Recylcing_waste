@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Restaurant</title>
+	<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<!-- Use Bootstrap for external design of Login and Sign up -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script>
+	// Retrieve data
+	var ck= "Welcome Back, " + localStorage.getItem("name");
+	document.getElementById('ck').innerHTML = ck;
+	</script>
+	
+</head>
+<body >
+	<header>
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt=""></a>
+			</div>
+			<div class="container" id="ck" style="color: #fff;position: absolute;top: 50px;left: 300px;">
+				<div class="top-left">{<script>document.getElementById('ck').innerHTML = ck;</script></div>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="index.html#our-menu">Menu</a></li>
+					<li><a href="about-us.html">About</a></li>
+					<li><a href="contact-us.html">Contact</a></li> 
+					<li><a href="login.html"><span class="fas fa-user"></span> Log in</a></li> 
+				</ul>
+			</div>
+		</div>
+	
+	</header>
+
+	<section class="">
+		<div>
+			<!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+    <li data-target="#carousel-example-2" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <div class="view">
+        <img class="d-block w-100" class="img-circle" src="images/fruits.jpg" alt="First slide" style="height:60%;">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Fresh Fruits</h3>
+        <p>Quench your appetite with our fresh fruits served with juice.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" class="img-circle" src="images/service.jpg" alt="Second slide" style="height:60%;">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Quality Service</h3>
+        <p>Our staff are qualified and will serve you beyond your expectations.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" class="img-circle" src="images/space.jpg" alt="Third slide" style="height: 10%;">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Spacious Rooms</h3>
+        <p>We pride in our rooms that are suitable for large families. Come and experience our amazing features.</p>
+      </div>
+    </div>
+  </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+		</div>
+	</section>
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Login in Here</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			
+      <div class="modal-body mx-3">
+				<div class="md-form mb-4">
+          <i class="fas fa-user"></i>
+          <input type="text" id="name" class="form-control validate" required>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your Name</label>
+        </div>
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="email" name="email" class="form-control validate" data-rule="email" data-msg="Please enter a valid email" required/>
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+					<div class="validate"></div>
+				</div>
+
+        
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" onclick="ValidateEmail(document.form.email);" style="background-color: #DE7230;">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+	<section class="section our_menu" id="our-menu">
+		<div class="container">
+
+			<div class="title">
+				<h2>Our Menu</h2>
+				<hr>
+			</div>
+  <!-- start of pasta row -->
+			<div class="menu_title">
+				<h3>Main Course</h3>
+			</div>
+			<div class="menu_row">
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/PASTA.JPG" target="_blank"><img src="images/PASTA.JPG" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Pasta</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/PIZZAJPG.gif" target="_blank"><img src="images/PIZZAJPG.gif" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Pizza</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/burger.JPG" target="_blank"><img src="images/burger.JPG" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Burger</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+  <!-- end of pasta -->
+
+<!-- start of salads -->
+			<div class="menu_title">
+				<h3>SALADS</h3>
+			</div>
+			<div class="menu_row">
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/Caesar Salad.JPG" target="_blank"><img src="images/Caesar Salad.JPG" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Caesar Salad</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/GREEN SALAD.JPG" target="_blank"><img src="images/GREEN SALAD.JPG" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Green Salad</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/dessert.jpg" target="_blank"><img src="images/dessert.jpg" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Dessert Salad</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<!-- end of salads -->
+
+
+<!-- start of Side Dish -->
+			<div class="menu_title">
+				<h3>Side Dish</h3>
+			</div>
+			<div class="menu_row">
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/fries.JPG" target="_blank"><img src="images/fries.JPG" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Fries</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/BITES.JPG" target="_blank"><img src="images/BITES.JPG" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Chicken Bites</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+				<div class="menu_grid">
+					<div class="menu_main">
+						<div class="menu_img">
+							<a href="images/bacon.jpg" target="_blank"><img src="images/bacon.jpg" alt=""></a>
+						</div>
+						<div class="menu_disc">
+							<h4>Bacon Wrapped Asparagus</h4>
+							<a href="contact-us.html" class="button">Order Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- End of Side Dish -->
+	</section>
+
+	<section class="section bg-light">
+		<div class="container">
+			<div class="title">
+				<h2>Resturant's Timings</h2>
+				<hr>
+			</div>
+
+			<div class="ays_row">
+				<div class="w_50">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Week Days</th>
+								<th>Duration</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Sunday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+							<tr>
+								<td>Monday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+							<tr>
+								<td>Tuesday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+							<tr>
+								<td>Wednesday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+							<tr>
+								<td>Thursday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+							<tr>
+								<td>Friday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+							<tr>
+								<td>Saturday</td>
+								<td>12:00 pm - 11:00pm</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<div class="w_50">
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/7EdpBH81XIY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+
+			
+
+
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p>Copyright &copy; 2020. All Rights Reserved.</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

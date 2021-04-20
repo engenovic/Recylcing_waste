@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aysha's Restaurant | Contact Us</title>
+	<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<script>
+    function ValidateEmail(mail) 
+{
+ if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+			// Retrieve data
+			var ck= "Welcome Back, " + localStorage.getItem("name");
+			document.getElementById('ck').innerHTML = ck;
+  </script>
+<style>
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #DE7230;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #DE7230;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+
+	<header>
+		<div class="">
+			<ul class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about-us.html">About</a></li>
+				<li>Contact us</li>
+			</ul>
+		</div>
+	</header>
+
+
+	<div class="container" id="ck">
+		<div class="top-left">{<script>document.getElementById('ck').innerHTML = ck;</script></div>
+	</div>
+	<section class="section">
+		<div>
+          
+			<iframe style="border:0; width: 100%; height: 270px;"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462565.2024594621!2d54.94686793200658!3d25.07508401929483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2ske!4v1605388395249!5m2!1sen!2ske" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		</div>
+		<div class="container">
+			<div class="title">
+				<h2>Get in touch with us for any queries</h2>
+				<hr>
+			</div>
+
+			<div  class="form_contact">
+				<form action="">
+					<input type="text" name="name" class="form_inp" placeholder="Full Name" required>
+					<input type="email" name="email" class="form_inp" placeholder="Email Address" required>
+					<input type="text" name="subject" class="form_inp" placeholder="Subject" required>
+					<textarea name="message" id="" cols="30" rows="5" class="form_inp" placeholder="Message" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
+					<button type="submit" class="button">Submit</button>
+				</form>
+			</div>
+			
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<p>Copyright &copy; 2020. All Rights Reserved.</p>
+		</div>
+	</footer>
+	
+</body>
+</html>
